@@ -3,11 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-<<<<<<< HEAD
 # Generated: Fri Mar 10 12:19:20 2017
-=======
-# Generated: Fri Mar  3 10:45:29 2017
->>>>>>> d9b2e209348ccfd895b0c511603a28849d72cf7b
 ##################################################
 
 if __name__ == '__main__':
@@ -69,15 +65,10 @@ class top_block(gr.top_block, Qt.QWidget):
               0.05,
               10.0,
               10,
-<<<<<<< HEAD
               False,
               False,
-=======
-              True,
-              True,
->>>>>>> d9b2e209348ccfd895b0c511603a28849d72cf7b
               0)
-          
+
         self.llsr_llsr_mac_0 = llsr.llsr_mac(
               1,
               0.01,
@@ -90,7 +81,7 @@ class top_block(gr.top_block, Qt.QWidget):
               False,
               False,
               0)
-          
+
         self.blocks_random_pdu_0 = blocks.random_pdu(5, 5, chr(0xFF), 2)
         self.blocks_message_strobe_3 = blocks.message_strobe(pmt.intern("TEST"), 1000)
         self.blocks_message_strobe_2 = blocks.message_strobe(pmt.intern("TEST"), 20000)
@@ -101,14 +92,14 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.llsr_llsr_mac_0, 'ctrl_in'))    
-        self.msg_connect((self.blocks_message_strobe_2, 'strobe'), (self.blocks_random_pdu_0, 'generate'))    
-        self.msg_connect((self.blocks_message_strobe_3, 'strobe'), (self.llsr_llsr_mac_1, 'ctrl_in'))    
-        self.msg_connect((self.blocks_random_pdu_0, 'pdus'), (self.llsr_llsr_mac_0, 'from_app_arq'))    
-        self.msg_connect((self.llsr_llsr_mac_0, 'to_app'), (self.blocks_message_debug_1, 'print_pdu'))    
-        self.msg_connect((self.llsr_llsr_mac_0, 'to_radio'), (self.llsr_llsr_mac_1, 'from_radio'))    
-        self.msg_connect((self.llsr_llsr_mac_1, 'to_app'), (self.blocks_message_debug_0, 'print'))    
-        self.msg_connect((self.llsr_llsr_mac_1, 'to_radio'), (self.llsr_llsr_mac_0, 'from_radio'))    
+        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.llsr_llsr_mac_0, 'ctrl_in'))
+        self.msg_connect((self.blocks_message_strobe_2, 'strobe'), (self.blocks_random_pdu_0, 'generate'))
+        self.msg_connect((self.blocks_message_strobe_3, 'strobe'), (self.llsr_llsr_mac_1, 'ctrl_in'))
+        self.msg_connect((self.blocks_random_pdu_0, 'pdus'), (self.llsr_llsr_mac_0, 'from_app_arq'))
+        self.msg_connect((self.llsr_llsr_mac_0, 'to_app'), (self.blocks_message_debug_1, 'print_pdu'))
+        self.msg_connect((self.llsr_llsr_mac_0, 'to_radio'), (self.llsr_llsr_mac_1, 'from_radio'))
+        self.msg_connect((self.llsr_llsr_mac_1, 'to_app'), (self.blocks_message_debug_0, 'print'))
+        self.msg_connect((self.llsr_llsr_mac_1, 'to_radio'), (self.llsr_llsr_mac_0, 'from_radio'))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "top_block")
